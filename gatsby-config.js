@@ -16,6 +16,20 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: '<https://my-website.com/>',
+        stripQueryString: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-typescript',
       options: {
         isTSX: true,
